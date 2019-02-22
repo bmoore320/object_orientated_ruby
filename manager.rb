@@ -1,11 +1,26 @@
-module EmailReportable
-  def send_report
-    p "totally about to go send a report...."
-    # write some code in here to send the report
-    p "definitely sent the report..."
-  end
-end
+# model an employee using ruby
+# keep track of their first_name, last_name, salary and active status
 
+# employee1 = ["Majora", "Carter", 80000, true]
+# employee2 = ["Danilo", "Campos", 70000, false]
+
+# # "Majora Carter makes $80000 per year"
+
+# p employee1[0] + ' ' + employee1[1] + ' makes $' + employee1[2].to_s + ' per year.'
+# p "#{employee2[0]} #{employee2[1]} makes $#{employee2[2]} per year."
+
+# hash
+
+# employee1 = { 'first_name' => "Majora", "last_name" => "Carter", "salary" => 80000, "active" => true}
+# employee2 = {:last_name => "Campos", :salary => 70000, :active => false, :first_name => "Danilo"}
+# # fancy
+# # employee2 = {first_name: "Danilo", last_name: "Campos", salary: 70000, active: false}
+
+# p "#{employee1['first_name']} #{employee1['last_name']} makes $#{employee1['salary']} per year."
+# p "#{employee2[:first_name]} #{employee2[:last_name]} makes $#{employee2[:salary]} per year."
+
+
+# class
 
 class Employee
   attr_reader :first_name, :last_name, :salary
@@ -60,11 +75,15 @@ employee2 = Employee.new(first_name: "Majora", last_name: "Carter", salary: 8000
 
 
 class Manager < Employee
-  include EmailReportable
-
   def initialize(input_options)
     super
     @employees = input_options[:employees]
+  end
+
+  def send_report
+    p "totally about to go send a report...."
+    # write some code in here to send the report
+    p "definitely sent the report..."
   end
 
   def give_all_raises
@@ -96,22 +115,8 @@ p employee1
 p employee2
 
 # manager.print_info
-manager.send_report
+# manager.send_report
 # p manager
 
 # write a give_all_raises method
 # write a fire_all_employees method
-
-
-
-# an intern is like an employee and they can also send reports
-
-class Intern < Employee
-  include EmailReportable
-end
-
-intern = Intern.new(first_name: "Ingid", last_name: "Isrignhausen", salary: 0, active: true)
-
-intern.print_info
-intern.send_report
-  
