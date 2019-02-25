@@ -13,5 +13,5 @@ end
 
 employee1 = Employee.new("Danilo", "Campos", 70000, false)
 employee1.print_info
-employee3 = Employee.new("Majora", "Carter", 80000, true)
-employee3.print_info
+employee2 = Employee.new("Majora", "Carter", 80000, true)
+employee2.print_info
