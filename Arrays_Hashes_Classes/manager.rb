@@ -9,6 +9,10 @@ class Employee
     @active = input_options[:active]
   end
  
+  def give_annual_salary
+    @salary *= 1.05
+  end
+
   def print_info
     p "#{@first_name} #{@last_name} makes $#{@salary} per year"
   end
@@ -16,15 +20,18 @@ end
         
 employee1 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: true)
 
-# p employee1.first_name
-# employee1.first_name = "Bob"
-# p "new name"
-# p employee1.first_name
 
-employee1.print_info
-  
+class Manager < Employee
 
+  def send_report
+    p "I get to out reports because I'm a manager"
+  end
+end
 
+manager = Manager.new(first_name: "Manny", last_name: "Bossman", salary: 100000, active: true)
 
+manager.print_info
+manager.send_report     
 
-
+      
+            
