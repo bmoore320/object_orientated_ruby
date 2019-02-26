@@ -1,8 +1,8 @@
 # model an employee using ruby
 # keep track of their first_name, last_name, salary and active status
 
-employee1 = ["Majora", "Carter", 80000, true]
-employee2 = ["Danilo", "Campos", 70000, false]
+employee1 = ["Majora", "Carter", 80000, false]
+employee2 = ["Danilo", "Campos", 70000, true]
 
 # "Majora Carter makes $80000 per year"
 
